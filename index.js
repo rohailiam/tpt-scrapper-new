@@ -8,9 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-app.use(cors({
-  origin: '*'
-}));
+app.use(cors());
 
 const minimal_args = [
   "--autoplay-policy=user-gesture-required",
