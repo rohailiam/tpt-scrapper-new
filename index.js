@@ -118,6 +118,7 @@ app.post("/numbers", async (req, res) => {
       req.continue();
     }
   });
+  console.log(labels)
   labels = labels.map((element) => encodeURIComponent(element));
   for(let i = 0; i < labels.length; i++) {
     results.push(await scrapeData(labels[i], page))
