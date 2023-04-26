@@ -1,12 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const puppeteer = require("puppeteer");
-const Cheerio = require("cheerio")
+const Cheerio = require("cheerio");
+var cors = require('cors')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(cors({
+  origin: '*'
+}));
 
 const minimal_args = [
   "--autoplay-policy=user-gesture-required",
